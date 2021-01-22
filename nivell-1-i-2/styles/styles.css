@@ -1,0 +1,120 @@
+@keyframes lado-lado {
+    from {
+        left: 0;
+        transform: scaleX(0.5);
+    }
+    10% {
+        transform: scaleX(1.5);
+    }
+    25% {
+        transform: scaleX(1);
+    }
+
+    49.5% {
+        transform: scaleX(1);
+    }
+    50% {
+        left: 97%;
+        transform: scaleX(0.5);
+    }
+    60% {
+        transform: scaleX(1.5);
+    }
+    75% {
+        transform: scaleX(1);
+    }
+   
+    to {
+        left: 0;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes bote {
+    from {
+        bottom: 0;
+        /* transform: scaleX(0.5); */
+        animation-timing-function: ease-out;
+    }
+    50% {
+        bottom: 93%;
+        /* transform: scaleX(1.5); */
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        bottom: 0;
+        /* transform: scaleX(1); */
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes efecto {
+    from,
+    to {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(720deg);
+    }
+}
+/* 
+    @keyframes squash {
+        from { 
+            transform: scaleX(0.5);
+        }
+        50%{
+        transform: scaleX(1.5);
+        }
+        to   { 
+            transform: scaleX(1);
+         }
+      } */
+
+#pista {
+    position: relative;
+    margin: auto auto;
+    width: 95vw;
+    height: 95vh;
+    border: 2px solid #666;
+    background: #cff;
+    background-image: url(../images/tennis-court-433_280.png);
+    object-fit: cover;
+    object-position: center;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+.pilota {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    animation-name: bote, efecto;
+    animation-iteration-count: infinite;
+    animation-duration: 4.2s;
+}
+
+.lado-lado {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+
+    animation-name: lado-lado;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+    animation-duration: 4.8s;
+}
+/*   
+  #squash {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    
+    animation-name: squash;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 4.8s;
+  } */

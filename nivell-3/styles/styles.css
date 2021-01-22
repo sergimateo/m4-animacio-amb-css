@@ -1,0 +1,140 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.cinc-cintes {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
+.cinta {
+  width: 20%;
+  margin: auto 0.2em;
+  height: 100%;
+}
+
+.cinta-container {
+  animation-fill-mode: forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Formatejat dels n-esims containers fills de la classe .cinta amb les animation delays*/
+
+.cinta:nth-child(1) .cinta-container {
+  background: #244f75;
+  transform: translate3d(-100%, 0, 0);
+  animation-name: from-left;
+  animation-duration: 1s;
+  animation-delay: 0.15s;
+}
+
+.cinta:nth-child(2) .cinta-container {
+  background: #60bfbf;
+  transform: translate3d(0, 100%, 0);
+  animation-duration: 1s;
+  animation-name: from-bottom;
+  animation-delay: 0.3s;
+}
+
+.cinta:nth-child(3) .cinta-container {
+  background: #8c4b7e;
+  transform: translate3d(0, -100%, 0);
+  animation-name: from-top;
+  animation-duration: 1s;
+  animation-delay: 0.45s;
+}
+
+.cinta:nth-child(4) .cinta-container {
+  background: #f8bb44;
+  transform: translate3d(0, 100%, 0);
+  animation-name: from-bottom;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+}
+
+.cinta:nth-child(5) .cinta-container {
+  background: #f24b4b;
+  transform: translate3d(100%, 0, 0);
+  animation-name: from-right;
+  animation-duration: 1s;
+  animation-delay: 0.75s;
+}
+
+/* La magia del ::before  */
+
+.cinc-cintes .cinta-container:hover::before {
+  transform: skew(0deg) scale(2) translate(0, 0);
+  opacity: 0.1;
+}
+
+.cinta-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: white;
+  opacity: 0.1;
+  transform-origin: center center;
+  transform: skew(30deg) scaleY(1) translate(0, 0);
+  transition: 0.5s;
+}
+
+/* Animacions */
+
+@keyframes from-top {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes from-bottom {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes from-right {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes from-left {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

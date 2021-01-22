@@ -1,0 +1,50 @@
+body
+{
+    width: 95vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-image: url("../images/tennis-court-433_280.png");
+    background-position: center center;
+    background-size: 95% 95%;
+    overflow: hidden;
+}
+.tennis-ball
+{
+    width: 100px;
+    position: absolute;
+    animation: tennis 4s linear infinite alternate;
+}
+@keyframes tennis
+{
+    0%
+    {
+        top:0vh;
+        left: 0px;
+        transform: rotate(0deg);
+    }    
+    25%
+    {
+        top: 90vh;
+        left: 300px;
+        transform: rotate(360deg);
+    }    
+    50%
+    {
+        top: 0vh;
+        left: 600px;
+        transform: rotate(0deg);
+    }    
+    75%
+    {
+        top: 90vh;
+        left: 900px;
+        transform: rotate(360deg);
+    }    
+    100%
+    {
+        top: 0vh;
+        left: 400px;
+        transform: rotate(0deg);
+    }
+}
